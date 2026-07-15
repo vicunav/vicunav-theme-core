@@ -1,8 +1,6 @@
-<!-- Sustituye {{NOMBRE_REPO}} por el nombre oficial del repositorio. -->
-# {{NOMBRE_REPO}}
+# vicunav-theme-core
 
-<!-- Sustituye {{PROPOSITO_UNA_LINEA}} por una frase que resuma el propósito del repositorio. -->
-Propósito: {{PROPOSITO_UNA_LINEA}}
+Propósito: Theme de bloques de WordPress y presentación compartida del ecosistema Vicunav.
 
 ## Reglas aplicables
 
@@ -12,9 +10,5 @@ No repitas esas reglas aquí; este archivo solo contiene el contexto específico
 
 ## Validación
 
-<!-- Sustituye {{COMANDO_TEST}} por el comando completo para ejecutar las pruebas del repositorio. -->
-```sh
-{{COMANDO_TEST}}
-```
-
-Ejecuta la validación antes de entregar cualquier cambio.
+Este repositorio todavía no tiene pruebas automatizadas. Antes de entregar un cambio,
+revisa manualmente la estructura del theme y valida la sintaxis de los archivos JSON.
