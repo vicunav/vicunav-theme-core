@@ -5,7 +5,10 @@
  * Categories: vicunav-theme-core
  * Description: Presentación principal en dos columnas con contenido y un espacio de imagen editable.
  * Inserter: yes
+ *
+ * @package Vicunav_Theme_Core
  */
+
 ?>
 
 <!-- wp:group {"tagName":"section","metadata":{"name":"Hero dividido con imagen"},"backgroundColor":"vicunav-neutral-100","textColor":"vicunav-neutral-900","style":{"spacing":{"padding":{"top":"var:preset|spacing|vicunav-space-xl","right":"var:preset|spacing|vicunav-space-md","bottom":"var:preset|spacing|vicunav-space-xl","left":"var:preset|spacing|vicunav-space-md"}}},"layout":{"type":"constrained"}} -->
