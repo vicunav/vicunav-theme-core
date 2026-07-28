@@ -1,6 +1,71 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/theme.json",
 	"version": 3,
-	"settings": {},
+	"settings": {
+		"color": {
+			"palette": [
+				{
+					"color": "#1D4ED8",
+					"name": "Primario Vicunav",
+					"slug": "vicunav-primary"
+				},
+				{
+					"color": "#475569",
+					"name": "Secundario Vicunav",
+					"slug": "vicunav-secondary"
+				},
+				{
+					"color": "#0369A1",
+					"name": "Acento Vicunav",
+					"slug": "vicunav-accent"
+				},
+				{
+					"color": "#F8FAFC",
+					"name": "Neutral 100",
+					"slug": "vicunav-neutral-100"
+				},
+				{
+					"color": "#F1F5F9",
+					"name": "Neutral 200",
+					"slug": "vicunav-neutral-200"
+				},
+				{
+					"color": "#E2E8F0",
+					"name": "Neutral 300",
+					"slug": "vicunav-neutral-300"
+				},
+				{
+					"color": "#CBD5E1",
+					"name": "Neutral 400",
+					"slug": "vicunav-neutral-400"
+				},
+				{
+					"color": "#94A3B8",
+					"name": "Neutral 500",
+					"slug": "vicunav-neutral-500"
+				},
+				{
+					"color": "#64748B",
+					"name": "Neutral 600",
+					"slug": "vicunav-neutral-600"
+				},
+				{
+					"color": "#475569",
+					"name": "Neutral 700",
+					"slug": "vicunav-neutral-700"
+				},
+				{
+					"color": "#334155",
+					"name": "Neutral 800",
+					"slug": "vicunav-neutral-800"
+				},
+				{
+					"color": "#0F172A",
+					"name": "Neutral 900",
+					"slug": "vicunav-neutral-900"
+				}
+			]
+		}
+	},
 	"styles": {}
 }
