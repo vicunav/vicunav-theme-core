@@ -65,6 +65,71 @@
 					"slug": "vicunav-neutral-900"
 				}
 			]
+		},
+		"spacing": {
+			"spacingSizes": [
+				{
+					"name": "Espacio XS",
+					"size": "0.5rem",
+					"slug": "vicunav-space-xs"
+				},
+				{
+					"name": "Espacio SM",
+					"size": "1rem",
+					"slug": "vicunav-space-sm"
+				},
+				{
+					"name": "Espacio MD",
+					"size": "1.5rem",
+					"slug": "vicunav-space-md"
+				},
+				{
+					"name": "Espacio LG",
+					"size": "2rem",
+					"slug": "vicunav-space-lg"
+				},
+				{
+					"name": "Espacio XL",
+					"size": "3rem",
+					"slug": "vicunav-space-xl"
+				}
+			]
+		},
+		"typography": {
+			"fontFamilies": [
+				{
+					"fontFamily": "ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+					"name": "Encabezados Vicunav",
+					"slug": "vicunav-heading"
+				},
+				{
+					"fontFamily": "ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+					"name": "Cuerpo Vicunav",
+					"slug": "vicunav-body"
+				}
+			],
+			"fontSizes": [
+				{
+					"name": "Pequeño Vicunav",
+					"size": "0.875rem",
+					"slug": "vicunav-sm"
+				},
+				{
+					"name": "Mediano Vicunav",
+					"size": "1rem",
+					"slug": "vicunav-md"
+				},
+				{
+					"name": "Grande Vicunav",
+					"size": "1.5rem",
+					"slug": "vicunav-lg"
+				},
+				{
+					"name": "Extra grande Vicunav",
+					"size": "2.25rem",
+					"slug": "vicunav-xl"
+				}
+			]
 		}
 	},
 	"styles": {}
