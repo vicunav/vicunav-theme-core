@@ -1,25 +1,25 @@
 # vicunav-theme-core
 
-Theme de bloques de WordPress y presentación compartida del ecosistema Vicunav.
+WordPress block theme and shared presentation layer for the Vicunav ecosystem.
 
-## Estado visual
+## Visual status
 
-**Colores placeholder, pendiente definir marca real.**
+**Placeholder colors, real brand still pending.**
 
-La paleta actual usa azules y grises genéricos para establecer el contrato técnico de
-tokens. No representa la identidad visual definitiva de Vicunav.
+The current palette uses generic blues and grays to establish the technical token
+contract. It does not represent Vicunav's final visual identity.
 
-## Preparación
+## Setup
 
 ```bash
 git submodule update --init --recursive
 ```
 
-Las reglas transversales del ecosistema están disponibles en
+The ecosystem's cross-cutting rules are available in
 [`docs/standards/`](docs/standards/).
 
-## Validación
+## Validation
 
-Los archivos declarativos y el markup estático se validan mediante renderizado e
-inspección conforme a
+Declarative files and static markup are validated through rendering and
+inspection per
 [`docs/standards/docs/testing.md`](docs/standards/docs/testing.md).
