@@ -16,9 +16,9 @@ Desde WordPress 6.7, un plugin puede registrar una plantilla con
 namespace-del-plugin//slug-de-la-plantilla
 ```
 
-Por ejemplo, la plantilla individual del CPT `vicu_restaurant` puede registrarse como
-`vicunav-restaurante//single-vicu_restaurant`. El namespace identifica al propietario
-del registro; el slug `single-vicu_restaurant` participa en la jerarquía de plantillas
+Por ejemplo, la plantilla individual del CPT `vicu_menu_item` puede registrarse como
+`vicunav-restaurante//single-vicu_menu_item`. El namespace identifica al propietario
+del registro; el slug `single-vicu_menu_item` participa en la jerarquía de plantillas
 de WordPress.
 
 El registro debe ejecutarse en `init` y proporcionar, como mínimo, contenido de
@@ -28,7 +28,7 @@ contenido compatibles:
 ```php
 <?php
 /**
- * Registra la plantilla individual predeterminada del restaurante.
+ * Registra la plantilla individual predeterminada de un elemento del menú.
  *
  * @return void
  */
@@ -38,12 +38,12 @@ function vicunav_restaurante_register_block_templates() {
 	}
 
 	$result = register_block_template(
-		'vicunav-restaurante//single-vicu_restaurant',
+		'vicunav-restaurante//single-vicu_menu_item',
 		array(
-			'title'       => 'Restaurante individual',
-			'description' => 'Presentación predeterminada de un restaurante.',
+			'title'       => 'Elemento de menú individual',
+			'description' => 'Presentación predeterminada de un elemento del menú.',
 			'content'     => '<!-- wp:post-title {"level":1} /--><!-- wp:post-content /-->',
-			'post_types'  => array( 'vicu_restaurant' ),
+			'post_types'  => array( 'vicu_menu_item' ),
 		)
 	);
 
@@ -76,12 +76,12 @@ el namespace completo. Para reemplazar visualmente el ejemplo anterior, una vers
 futura de este theme podría añadir:
 
 ```text
-templates/single-vicu_restaurant.html
+templates/single-vicu_menu_item.html
 ```
 
 No tendría que volver a registrar
-`vicunav-restaurante//single-vicu_restaurant`. Cuando ambos existen, el archivo del
-theme con slug `single-vicu_restaurant` aporta el contenido y conserva los metadatos
+`vicunav-restaurante//single-vicu_menu_item`. Cuando ambos existen, el archivo del
+theme con slug `single-vicu_menu_item` aporta el contenido y conserva los metadatos
 útiles del registro del plugin.
 
 La precedencia efectiva es:
@@ -98,7 +98,7 @@ usuario debe restablecer esa plantilla desde el Editor del sitio.
 
 - Usa el slug real del plugin como namespace, en minúsculas.
 - Usa un slug de plantilla que coincida con la jerarquía esperada, por ejemplo
-  `single-vicu_restaurant` o `archive-vicu_hotel`.
+  `single-vicu_menu_item` o `archive-vicu_hotel`.
 - Registra cada plantilla una sola vez y comprueba si el resultado es `WP_Error`.
 - Limita `post_types` a los CPT que realmente consumen la plantilla.
 - Mantén la plantilla libre de lógica de negocio y usa bloques o APIs públicas.
