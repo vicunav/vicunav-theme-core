@@ -1,0 +1,325 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.6/theme.json",
+	"version": 3,
+	"title": "Bonasera",
+	"settings": {
+		"color": {
+			"defaultPalette": false,
+			"palette": [
+				{
+					"color": "#0D0D0D",
+					"name": "Primario Bonasera",
+					"slug": "vicunav-primary"
+				},
+				{
+					"color": "#4A3B33",
+					"name": "Secundario Bonasera",
+					"slug": "vicunav-secondary"
+				},
+				{
+					"color": "#9DAAAA",
+					"name": "Acento Bonasera",
+					"slug": "vicunav-accent"
+				},
+				{
+					"color": "#FAEBD7",
+					"name": "Crema Bonasera",
+					"slug": "vicunav-neutral-100"
+				},
+				{
+					"color": "#F0DFC4",
+					"name": "Crema tenue Bonasera",
+					"slug": "vicunav-neutral-200"
+				},
+				{
+					"color": "#FFFDF8",
+					"name": "Papel Bonasera",
+					"slug": "vicunav-neutral-300"
+				},
+				{
+					"color": "rgba(13, 13, 13, 0.12)",
+					"name": "Tinta 12% Bonasera",
+					"slug": "vicunav-neutral-400"
+				},
+				{
+					"color": "rgba(13, 13, 13, 0.5)",
+					"name": "Tinta 50% Bonasera",
+					"slug": "vicunav-neutral-500"
+				},
+				{
+					"color": "rgba(13, 13, 13, 0.62)",
+					"name": "Tinta 62% Bonasera",
+					"slug": "vicunav-neutral-600"
+				},
+				{
+					"color": "rgba(13, 13, 13, 0.75)",
+					"name": "Tinta 75% Bonasera",
+					"slug": "vicunav-neutral-700"
+				},
+				{
+					"color": "#4A3B33",
+					"name": "Marrón malta Bonasera",
+					"slug": "vicunav-neutral-800"
+				},
+				{
+					"color": "#0D0D0D",
+					"name": "Tinta Bonasera",
+					"slug": "vicunav-neutral-900"
+				}
+			]
+		},
+		"layout": {
+			"contentSize": "42rem",
+			"wideSize": "77.5rem"
+		},
+		"spacing": {
+			"defaultSpacingSizes": false,
+			"spacingSizes": [
+				{
+					"name": "Bonasera 1",
+					"size": "0.25rem",
+					"slug": "bonasera-space-1"
+				},
+				{
+					"name": "Espacio XS",
+					"size": "0.5rem",
+					"slug": "vicunav-space-xs"
+				},
+				{
+					"name": "Bonasera 3",
+					"size": "0.75rem",
+					"slug": "bonasera-space-3"
+				},
+				{
+					"name": "Espacio SM",
+					"size": "1rem",
+					"slug": "vicunav-space-sm"
+				},
+				{
+					"name": "Espacio MD",
+					"size": "1.5rem",
+					"slug": "vicunav-space-md"
+				},
+				{
+					"name": "Espacio LG",
+					"size": "2rem",
+					"slug": "vicunav-space-lg"
+				},
+				{
+					"name": "Espacio XL",
+					"size": "3rem",
+					"slug": "vicunav-space-xl"
+				},
+				{
+					"name": "Bonasera 8",
+					"size": "4rem",
+					"slug": "bonasera-space-8"
+				},
+				{
+					"name": "Bonasera 9",
+					"size": "6rem",
+					"slug": "bonasera-space-9"
+				},
+				{
+					"name": "Bonasera 10",
+					"size": "8.75rem",
+					"slug": "bonasera-space-10"
+				}
+			]
+		},
+		"typography": {
+			"defaultFontSizes": false,
+			"fontFamilies": [
+				{
+					"fontFace": [
+						{
+							"fontDisplay": "swap",
+							"fontFamily": "Big Shoulders Display",
+							"fontStyle": "normal",
+							"fontWeight": "700 900",
+							"src": "file:./assets/fonts/big-shoulders-display-latin.woff2"
+						}
+					],
+					"fontFamily": "\"Big Shoulders Display\", sans-serif",
+					"name": "Encabezados Bonasera",
+					"slug": "vicunav-heading"
+				},
+				{
+					"fontFace": [
+						{
+							"fontDisplay": "swap",
+							"fontFamily": "Jost",
+							"fontStyle": "normal",
+							"fontWeight": "400 700",
+							"src": "file:./assets/fonts/jost-latin.woff2"
+						}
+					],
+					"fontFamily": "Jost, sans-serif",
+					"name": "Cuerpo Bonasera",
+					"slug": "vicunav-body"
+				}
+			],
+			"fontSizes": [
+				{
+					"name": "Micro Bonasera",
+					"size": "0.6875rem",
+					"slug": "bonasera-xs"
+				},
+				{
+					"name": "Pequeño Vicunav",
+					"size": "0.78125rem",
+					"slug": "vicunav-sm"
+				},
+				{
+					"name": "Base Bonasera",
+					"size": "0.875rem",
+					"slug": "bonasera-base"
+				},
+				{
+					"name": "Mediano Vicunav",
+					"size": "0.9375rem",
+					"slug": "vicunav-md"
+				},
+				{
+					"name": "Grande Vicunav",
+					"size": "1.1875rem",
+					"slug": "vicunav-lg"
+				},
+				{
+					"name": "Grande Bonasera",
+					"size": "1.375rem",
+					"slug": "bonasera-xl"
+				},
+				{
+					"name": "Extra grande Bonasera",
+					"size": "1.625rem",
+					"slug": "bonasera-xxl"
+				},
+				{
+					"fluid": false,
+					"name": "Display Vicunav",
+					"size": "clamp(2.25rem, 5vw, 3.375rem)",
+					"slug": "vicunav-xl"
+				}
+			]
+		},
+		"custom": {
+			"bonasera": {
+				"radius": {
+					"circle": "50%",
+					"none": "0",
+					"pill": "999px"
+				},
+				"sectionSpacing": {
+					"inline": "clamp(1.5rem, 5vw, 6rem)",
+					"vertical": "clamp(4rem, 10vw, 8.75rem)"
+				},
+				"shadow": {
+					"card": "0 10px 22px rgba(13, 13, 13, 0.16)",
+					"cardHover": "0 20px 40px rgba(13, 13, 13, 0.24)"
+				}
+			}
+		}
+	},
+	"styles": {
+		"color": {
+			"background": "var(--wp--preset--color--vicunav-neutral-100)",
+			"text": "var(--wp--preset--color--vicunav-neutral-900)"
+		},
+		"elements": {
+			"button": {
+				"border": {
+					"radius": "var(--wp--custom--bonasera--radius--pill)",
+					"style": "solid",
+					"width": "1px"
+				},
+				"color": {
+					"background": "var(--wp--preset--color--vicunav-primary)",
+					"text": "var(--wp--preset--color--vicunav-neutral-100)"
+				},
+				"spacing": {
+					"padding": {
+						"bottom": "0.875rem",
+						"left": "1.625rem",
+						"right": "1.625rem",
+						"top": "0.875rem"
+					}
+				},
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--vicunav-body)",
+					"fontSize": "var(--wp--preset--font-size--bonasera-base)",
+					"fontWeight": "700",
+					"letterSpacing": "0.03em",
+					"textTransform": "uppercase"
+				},
+				":focus": {
+					"outline": {
+						"color": "transparent",
+						"offset": "2px",
+						"style": "solid",
+						"width": "2px"
+					},
+					"shadow": "0 0 0 2px var(--wp--preset--color--vicunav-neutral-900), 0 0 0 5px var(--wp--preset--color--vicunav-neutral-100)"
+				},
+				":hover": {
+					"color": {
+						"background": "var(--wp--preset--color--vicunav-secondary)",
+						"text": "var(--wp--preset--color--vicunav-neutral-100)"
+					}
+				}
+			},
+			"heading": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--vicunav-heading)",
+					"fontWeight": "800",
+					"letterSpacing": "0.01em",
+					"lineHeight": "0.95",
+					"textTransform": "uppercase"
+				}
+			},
+			"link": {
+				"color": {
+					"text": "var(--wp--preset--color--vicunav-primary)"
+				},
+				":focus": {
+					"outline": {
+						"color": "transparent",
+						"offset": "2px",
+						"style": "solid",
+						"width": "2px"
+					},
+					"shadow": "0 0 0 2px var(--wp--preset--color--vicunav-neutral-900), 0 0 0 5px var(--wp--preset--color--vicunav-neutral-100)"
+				},
+				":hover": {
+					"color": {
+						"text": "var(--wp--preset--color--vicunav-secondary)"
+					}
+				}
+			}
+		},
+		"typography": {
+			"fontFamily": "var(--wp--preset--font-family--vicunav-body)",
+			"fontSize": "var(--wp--preset--font-size--vicunav-md)",
+			"lineHeight": "1.5"
+		},
+		"blocks": {
+			"core/navigation": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--vicunav-body)",
+					"fontSize": "var(--wp--preset--font-size--bonasera-base)",
+					"fontWeight": "600",
+					"letterSpacing": "0.03em",
+					"textTransform": "uppercase"
+				}
+			},
+			"core/site-title": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--vicunav-heading)",
+					"fontWeight": "800",
+					"letterSpacing": "0.01em",
+					"textTransform": "uppercase"
+				}
+			}
+		}
+	}
+}
