@@ -16,6 +16,8 @@ Version `0.1.0` contains the complete foundation planned for the first theme mil
   rendering.
 - Default and contact-first headers.
 - Full and minimal footers.
+- Restaurant home/inner headers and full/minimal footers with responsive, accessible
+  core Navigation behavior.
 - Centered and split-image heroes, a simple CTA, testimonials, FAQ accordion, and
   contact-information patterns.
 - Optional integration with shared settings and content types from the future
