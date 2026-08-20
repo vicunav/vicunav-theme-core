@@ -10,6 +10,8 @@ Version `0.1.0` contains the complete foundation planned for the first theme mil
 
 - WordPress 6.6 and PHP 8.1 minimum compatibility.
 - Public color, spacing, typography, and font-size tokens in `theme.json`.
+- A selectable Bonasera style variation with self-hosted OFL fonts and WCAG AA
+  contrast evidence, without replacing the global defaults.
 - General templates for front page, pages, single content, archives, and fallback
   rendering.
 - Default and contact-first headers.

@@ -53,6 +53,27 @@ y pueden cambiar cuando se apruebe la identidad visual definitiva.
 - Familias: `vicunav-heading` y `vicunav-body`.
 - Tamaños: `vicunav-sm`, `vicunav-md`, `vicunav-lg` y `vicunav-xl`.
 
+## Variaciones visuales
+
+El theme publica la variación seleccionable `Bonasera` mediante
+`styles/bonasera.json`. La variación conserva los slugs contractuales y sustituye solo
+sus valores efectivos. No modifica la identidad predeterminada de `theme.json`.
+
+Bonasera añade estos tokens exclusivos de la variación:
+
+- espaciado: `bonasera-space-1`, `bonasera-space-3`, `bonasera-space-8`,
+  `bonasera-space-9` y `bonasera-space-10`;
+- tamaños: `bonasera-xs`, `bonasera-base`, `bonasera-xl` y `bonasera-xxl`;
+- propiedades personalizadas bajo `--wp--custom--bonasera` para radios, sombras y
+  espaciado fluido de secciones.
+
+Las familias `vicunav-heading` y `vicunav-body` se resuelven respectivamente a Big
+Shoulders Display y Jost cuando la variación está activa. Ambas se sirven desde el
+theme bajo SIL Open Font License 1.1, sin dependencia remota de runtime.
+
+La fuente auditada, las mediciones de contraste y la persistencia de la selección se
+documentan en [`variacion-bonasera.md`](variacion-bonasera.md).
+
 ## Templates y partes
 
 Templates generales:
