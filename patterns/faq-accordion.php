@@ -21,9 +21,11 @@
 <!-- wp:group {"className":"vicunav-faq-accordion__item","backgroundColor":"vicunav-neutral-200","textColor":"vicunav-neutral-900","style":{"spacing":{"padding":{"top":"var:preset|spacing|vicunav-space-lg","right":"var:preset|spacing|vicunav-space-lg","bottom":"var:preset|spacing|vicunav-space-lg","left":"var:preset|spacing|vicunav-space-lg"},"blockGap":"var:preset|spacing|vicunav-space-sm"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group vicunav-faq-accordion__item has-vicunav-neutral-900-color has-vicunav-neutral-200-background-color has-text-color has-background" style="padding-top:var(--wp--preset--spacing--vicunav-space-lg);padding-right:var(--wp--preset--spacing--vicunav-space-lg);padding-bottom:var(--wp--preset--spacing--vicunav-space-lg);padding-left:var(--wp--preset--spacing--vicunav-space-lg)"><!-- wp:post-title {"level":3,"isLink":false,"textColor":"vicunav-neutral-900","fontSize":"vicunav-lg","fontFamily":"vicunav-heading"} /-->
 
-<!-- wp:html -->
-<button type="button" class="vicunav-faq-accordion__toggle wp-element-button has-vicunav-neutral-100-color has-vicunav-primary-background-color has-text-color has-background has-vicunav-body-font-family has-vicunav-md-font-size" aria-expanded="true">Ocultar respuesta</button>
-<!-- /wp:html -->
+<!-- wp:buttons -->
+<div class="wp-block-buttons"><!-- wp:button {"tagName":"button","type":"button","backgroundColor":"vicunav-primary","textColor":"vicunav-neutral-100","className":"vicunav-faq-accordion__toggle","fontSize":"vicunav-md","fontFamily":"vicunav-body"} -->
+<div class="wp-block-button vicunav-faq-accordion__toggle has-custom-font-size has-vicunav-body-font-family has-vicunav-md-font-size"><button type="button" class="wp-block-button__link has-vicunav-neutral-100-color has-vicunav-primary-background-color has-text-color has-background wp-element-button">Ocultar respuesta</button></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons -->
 
 <!-- wp:group {"className":"vicunav-faq-accordion__answer","textColor":"vicunav-neutral-800","layout":{"type":"constrained"}} -->
 <div class="wp-block-group vicunav-faq-accordion__answer has-vicunav-neutral-800-color has-text-color"><!-- wp:post-content {"fontSize":"vicunav-md","fontFamily":"vicunav-body","layout":{"type":"constrained"}} /--></div>

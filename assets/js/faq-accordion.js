@@ -2,7 +2,10 @@ const initializeFaqAccordions = () => {
 	const items = document.querySelectorAll( '.vicunav-faq-accordion__item' );
 
 	items.forEach( ( item, index ) => {
-		const button = item.querySelector( '.vicunav-faq-accordion__toggle' );
+		const toggle = item.querySelector( '.vicunav-faq-accordion__toggle' );
+		const button = toggle?.matches( 'button' )
+			? toggle
+			: toggle?.querySelector( 'button' );
 		const answer = item.querySelector( '.vicunav-faq-accordion__answer' );
 		const heading = item.querySelector( '.wp-block-post-title' );
 
