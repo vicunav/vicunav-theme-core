@@ -57,3 +57,23 @@ function vicunav_theme_core_enqueue_scripts() {
 	);
 }
 add_action( 'wp_enqueue_scripts', 'vicunav_theme_core_enqueue_scripts' );
+
+/**
+ * Registra los estilos scoped del chrome reutilizable de restaurante.
+ *
+ * @return void
+ */
+function vicunav_theme_core_register_restaurant_chrome_style() {
+	$style_path = get_theme_file_path( 'assets/css/restaurant-chrome.css' );
+
+	wp_enqueue_block_style(
+		'core/navigation',
+		array(
+			'handle' => 'vicunav-theme-core-restaurant-chrome',
+			'src'    => get_theme_file_uri( 'assets/css/restaurant-chrome.css' ),
+			'path'   => $style_path,
+			'ver'    => file_exists( $style_path ) ? (string) filemtime( $style_path ) : wp_get_theme()->get( 'Version' ),
+		)
+	);
+}
+add_action( 'init', 'vicunav_theme_core_register_restaurant_chrome_style' );

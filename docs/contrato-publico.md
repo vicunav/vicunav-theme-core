@@ -88,8 +88,17 @@ Partes disponibles:
 
 - `header-default`
 - `header-contact-first`
+- `header-restaurant-home`
+- `header-restaurant-inner`
 - `footer-full`
 - `footer-minimal`
+- `footer-restaurant-full`
+- `footer-restaurant-minimal`
+
+Los cuatro parts de restaurante son variantes visuales y editables. Sus enlaces son
+valores iniciales, no rutas contractuales del vertical. No leen estado de carrito,
+pedidos, pagos, reservas ni disponibilidad. Sus estilos están scoped y se documentan
+en [`chrome-restaurante.md`](chrome-restaurante.md).
 
 Los verticales no deben asumir que el theme incluye un template específico para su
 CPT. Cada plugin registra su plantilla predeterminada y el theme puede sobrescribirla
