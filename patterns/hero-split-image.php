@@ -30,7 +30,7 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"center"} -->
-<div class="wp-block-column is-vertically-aligned-center"><!-- wp:cover {"dimRatio":0,"backgroundColor":"vicunav-neutral-300","isDark":false,"style":{"spacing":{"padding":{"top":"var:preset|spacing|vicunav-space-xl","right":"var:preset|spacing|vicunav-space-md","bottom":"var:preset|spacing|vicunav-space-xl","left":"var:preset|spacing|vicunav-space-md"}}}} -->
+<div class="wp-block-column is-vertically-aligned-center"><!-- wp:cover {"dimRatio":0,"overlayColor":"vicunav-neutral-300","isDark":false,"style":{"spacing":{"padding":{"top":"var:preset|spacing|vicunav-space-xl","right":"var:preset|spacing|vicunav-space-md","bottom":"var:preset|spacing|vicunav-space-xl","left":"var:preset|spacing|vicunav-space-md"}}}} -->
 <div class="wp-block-cover is-light" style="padding-top:var(--wp--preset--spacing--vicunav-space-xl);padding-right:var(--wp--preset--spacing--vicunav-space-md);padding-bottom:var(--wp--preset--spacing--vicunav-space-xl);padding-left:var(--wp--preset--spacing--vicunav-space-md)"><span aria-hidden="true" class="wp-block-cover__background has-vicunav-neutral-300-background-color has-background-dim-0 has-background-dim"></span><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","textColor":"vicunav-neutral-700","fontSize":"vicunav-md","fontFamily":"vicunav-body"} -->
 <p class="has-text-align-center has-vicunav-neutral-700-color has-text-color has-vicunav-body-font-family has-vicunav-md-font-size">Selecciona una imagen para este espacio</p>
 <!-- /wp:paragraph --></div></div>
