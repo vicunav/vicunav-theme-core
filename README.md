@@ -20,6 +20,7 @@ Version `0.1.0` contains the complete foundation planned for the first theme mil
   core Navigation behavior.
 - Centered and split-image heroes, a simple CTA, testimonials, FAQ accordion, and
   contact-information patterns.
+- Reusable editorial-story and linked-card-grid patterns for content-led verticals.
 - Optional integration with shared settings and content types from the future
   `vicunav-plugin-core` package.
 

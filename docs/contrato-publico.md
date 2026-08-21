@@ -113,12 +113,19 @@ Todos pertenecen a la categoría `vicunav-theme-core`:
 | `vicunav-theme-core/hero-centered` | Ninguna |
 | `vicunav-theme-core/hero-split-image` | Ninguna |
 | `vicunav-theme-core/cta-simple` | Ninguna |
+| `vicunav-theme-core/editorial-story` | Ninguna |
+| `vicunav-theme-core/linked-cards-grid` | Ninguna |
 | `vicunav-theme-core/testimonials-grid` | CPT `vicu_testimonial` |
 | `vicunav-theme-core/faq-accordion` | CPT `vicu_faq` |
 | `vicunav-theme-core/contact-info` | `Vicu\Core\Settings` |
 
 Los patrones que dependen de contenido muestran un estado vacío o valores editables
 cuando el plugin correspondiente no está activo.
+
+La matriz que compara las superficies editoriales del restaurante con los patterns
+existentes se documenta en
+[`patterns-editoriales-restaurante.md`](patterns-editoriales-restaurante.md). El mapa
+dinámico de delivery y cualquier catálogo permanecen fuera del theme.
 
 ## Integración con `vicunav-plugin-core`
 
