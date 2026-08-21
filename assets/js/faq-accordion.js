@@ -31,7 +31,7 @@ const initializeFaqAccordions = () => {
 			answer.hidden = ! expanded;
 		};
 
-		updateState( button.getAttribute( 'aria-expanded' ) !== 'false' );
+		updateState( button.getAttribute( 'aria-expanded' ) === 'true' );
 
 		button.addEventListener( 'click', () => {
 			updateState( button.getAttribute( 'aria-expanded' ) !== 'true' );
