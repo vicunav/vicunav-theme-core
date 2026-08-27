@@ -3,7 +3,9 @@
 	"version": 3,
 	"title": "Bonasera",
 	"settings": {
+		"appearanceTools": true,
 		"color": {
+			"defaultGradients": false,
 			"defaultPalette": false,
 			"palette": [
 				{
@@ -20,6 +22,26 @@
 					"color": "#9DAAAA",
 					"name": "Acento Bonasera",
 					"slug": "vicunav-accent"
+				},
+				{
+					"color": "#4D673B",
+					"name": "Positivo Bonasera",
+					"slug": "vicunav-positive"
+				},
+				{
+					"color": "#9F4527",
+					"name": "Advertencia Bonasera",
+					"slug": "vicunav-warning"
+				},
+				{
+					"color": "#A8432B",
+					"name": "Peligro Bonasera",
+					"slug": "vicunav-danger"
+				},
+				{
+					"color": "#557259",
+					"name": "Información Bonasera",
+					"slug": "vicunav-info"
 				},
 				{
 					"color": "#FAEBD7",
@@ -74,6 +96,7 @@
 		},
 		"spacing": {
 			"defaultSpacingSizes": false,
+			"units": ["px", "rem", "%", "vw"],
 			"spacingSizes": [
 				{
 					"name": "Bonasera 1",
@@ -124,6 +147,36 @@
 					"name": "Bonasera 10",
 					"size": "8.75rem",
 					"slug": "bonasera-space-10"
+				}
+			]
+		},
+		"shadow": {
+			"defaultPresets": false,
+			"presets": [
+				{
+					"name": "Tarjeta Bonasera",
+					"shadow": "0 10px 22px rgba(13, 13, 13, 0.16)",
+					"slug": "bonasera-card"
+				},
+				{
+					"name": "Tarjeta elevada Bonasera",
+					"shadow": "0 20px 40px rgba(13, 13, 13, 0.24)",
+					"slug": "bonasera-card-hover"
+				},
+				{
+					"name": "Modal Bonasera",
+					"shadow": "0 30px 70px rgba(13, 13, 13, 0.35)",
+					"slug": "bonasera-modal"
+				},
+				{
+					"name": "Panel lateral Bonasera",
+					"shadow": "-12px 0 40px rgba(13, 13, 13, 0.25)",
+					"slug": "bonasera-drawer"
+				},
+				{
+					"name": "Aviso Bonasera",
+					"shadow": "0 12px 30px rgba(13, 13, 13, 0.3)",
+					"slug": "bonasera-toast"
 				}
 			]
 		},
@@ -205,6 +258,35 @@
 		},
 		"custom": {
 			"bonasera": {
+				"border": {
+					"hairline": "rgba(13, 13, 13, 0.12)",
+					"hairlineInverse": "rgba(250, 235, 215, 0.12)",
+					"onInverse": "rgba(250, 235, 215, 0.4)",
+					"onPage": "rgba(13, 13, 13, 0.35)",
+					"option": "rgba(13, 13, 13, 0.2)",
+					"optionUnavailable": "rgba(13, 13, 13, 0.25)"
+				},
+				"breakpoint": {
+					"large": "1024px",
+					"medium": "768px",
+					"small": "480px",
+					"wide": "1440px"
+				},
+				"container": {
+					"max": "1240px"
+				},
+				"motion": {
+					"durationBase": "0.25s",
+					"durationFast": "0.2s",
+					"durationSlow": "0.5s",
+					"easeStandard": "cubic-bezier(0.2, 0.7, 0.2, 1)"
+				},
+				"opacity": {
+					"hairline": "0.08",
+					"muted": "0.35",
+					"strong": "0.75",
+					"subtle": "0.55"
+				},
 				"radius": {
 					"circle": "50%",
 					"none": "0",
@@ -216,7 +298,31 @@
 				},
 				"shadow": {
 					"card": "0 10px 22px rgba(13, 13, 13, 0.16)",
-					"cardHover": "0 20px 40px rgba(13, 13, 13, 0.24)"
+					"cardHover": "0 20px 40px rgba(13, 13, 13, 0.24)",
+					"drawer": "-12px 0 40px rgba(13, 13, 13, 0.25)",
+					"modal": "0 30px 70px rgba(13, 13, 13, 0.35)",
+					"toast": "0 12px 30px rgba(13, 13, 13, 0.3)"
+				},
+				"surface": {
+					"cardDark": "var(--wp--preset--color--vicunav-neutral-900)",
+					"cardLight": "var(--wp--preset--color--vicunav-neutral-200)",
+					"chipOnInverse": "rgba(250, 235, 215, 0.12)",
+					"chipOnInverseHover": "rgba(250, 235, 215, 0.18)",
+					"inverse": "var(--wp--preset--color--vicunav-neutral-900)",
+					"page": "var(--wp--preset--color--vicunav-neutral-100)",
+					"tinted": "var(--wp--preset--color--vicunav-neutral-200)"
+				},
+				"text": {
+					"faintOnInverse": "rgba(250, 235, 215, 0.5)",
+					"faintOnPage": "rgba(13, 13, 13, 0.5)",
+					"mutedOnInverse": "rgba(250, 235, 215, 0.6)",
+					"mutedOnPage": "rgba(13, 13, 13, 0.55)",
+					"onInverse": "var(--wp--preset--color--vicunav-neutral-100)",
+					"onPage": "var(--wp--preset--color--vicunav-neutral-900)",
+					"secondaryOnInverse": "rgba(250, 235, 215, 0.85)",
+					"secondaryOnPage": "rgba(13, 13, 13, 0.75)",
+					"tertiaryOnInverse": "rgba(250, 235, 215, 0.72)",
+					"tertiaryOnPage": "rgba(13, 13, 13, 0.62)"
 				}
 			}
 		}
@@ -226,13 +332,17 @@
 			"background": "var(--wp--preset--color--vicunav-neutral-100)",
 			"text": "var(--wp--preset--color--vicunav-neutral-900)"
 		},
+		"spacing": {
+			"blockGap": "var(--wp--preset--spacing--vicunav-space-md)"
+		},
 		"elements": {
 			"button": {
 				"border": {
 					"radius": "var(--wp--custom--bonasera--radius--pill)",
 					"style": "solid",
-					"width": "1px"
+					"width": "1.5px"
 				},
+				"css": "min-height: 44px; transition: opacity var(--wp--custom--bonasera--motion--duration-fast) ease, background-color var(--wp--custom--bonasera--motion--duration-fast) ease; &:hover { opacity: 0.72; }",
 				"color": {
 					"background": "var(--wp--preset--color--vicunav-primary)",
 					"text": "var(--wp--preset--color--vicunav-neutral-100)"
@@ -263,10 +373,28 @@
 				},
 				":hover": {
 					"color": {
-						"background": "var(--wp--preset--color--vicunav-secondary)",
+						"background": "var(--wp--preset--color--vicunav-primary)",
 						"text": "var(--wp--preset--color--vicunav-neutral-100)"
 					}
 				}
+			},
+			"h1": {
+				"css": "transform: scaleY(1.22);"
+			},
+			"h2": {
+				"css": "transform: scaleY(1.22);"
+			},
+			"h3": {
+				"css": "transform: scaleY(1.22);"
+			},
+			"h4": {
+				"css": "transform: scaleY(1.22);"
+			},
+			"h5": {
+				"css": "transform: scaleY(1.22);"
+			},
+			"h6": {
+				"css": "transform: scaleY(1.22);"
 			},
 			"heading": {
 				"typography": {
@@ -303,6 +431,16 @@
 			"lineHeight": "1.5"
 		},
 		"blocks": {
+			"core/buttons": {
+				"spacing": {
+					"blockGap": "var(--wp--preset--spacing--vicunav-space-xs)"
+				}
+			},
+			"core/image": {
+				"border": {
+					"radius": "var(--wp--custom--bonasera--radius--none)"
+				}
+			},
 			"core/navigation": {
 				"typography": {
 					"fontFamily": "var(--wp--preset--font-family--vicunav-body)",
@@ -315,8 +453,10 @@
 			"core/site-title": {
 				"typography": {
 					"fontFamily": "var(--wp--preset--font-family--vicunav-heading)",
+					"fontSize": "var(--wp--preset--font-size--vicunav-lg)",
 					"fontWeight": "800",
 					"letterSpacing": "0.01em",
+					"lineHeight": "0.86",
 					"textTransform": "uppercase"
 				}
 			}

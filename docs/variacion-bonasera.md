@@ -22,11 +22,25 @@ contrato base:
 - espaciado: `bonasera-space-1`, `bonasera-space-3`, `bonasera-space-8`,
   `bonasera-space-9` y `bonasera-space-10`;
 - tipografía: `bonasera-xs`, `bonasera-base`, `bonasera-xl` y `bonasera-xxl`;
-- custom properties bajo `--wp--custom--bonasera` para radios, sombras y padding
+- sombras: tarjeta, tarjeta elevada, modal, panel lateral y aviso;
+- custom properties bajo `--wp--custom--bonasera` para bordes, breakpoints,
+  contenedor, movimiento, opacidades, radios, sombras, superficies, texto y padding
   fluido de secciones.
 
-Los valores de estado transaccional no se publican como tokens editoriales del theme.
-Pertenecen a los bloques del plugin que representan cada estado.
+La escala efectiva cubre los diez pasos 4, 8, 12, 16, 24, 32, 48, 64, 96 y 140 px;
+los ocho tamaños 11, 12.5, 14, 15, 19, 22, 26 y 36 a 54 px; el contenedor de 1240 px;
+y los breakpoints 480, 768, 1024 y 1440 px. El ritmo de bloque predeterminado usa
+24 px. Los headings conservan Big Shoulders Display, peso 800, uppercase y escala
+vertical 1.22; el cuerpo y los controles usan Jost.
+
+Los estilos globales cubren fondo, texto, enlaces, botones, headings, navegación,
+título del sitio, imágenes y separación de grupos de botones. Geometría de secciones,
+patterns y chrome se implementan en THEME-REST-05; los estados funcionales y su markup
+permanecen en `vicunav-restaurante`.
+
+El theme publica solo los colores visuales genéricos positivo, advertencia, peligro e
+información. La semántica, el texto y la transición de cada estado transaccional
+pertenecen a los bloques del plugin que lo representan.
 
 ## Contraste
 
@@ -41,6 +55,15 @@ aprobar un umbral:
 | Tinta `#0D0D0D` sobre salvia `#9DAAAA` | 8.11:1 | Acentos con texto |
 | Tinta `#0D0D0D` sobre papel `#FFFDF8` | 19.12:1 | Tarjetas editoriales |
 | Crema `#FAEBD7` sobre marrón `#4A3B33` | 9.13:1 | Hover de botones |
+| Positivo `#4D673B` sobre crema `#FAEBD7` | 5.40:1 | Estado positivo genérico |
+| Advertencia `#9F4527` sobre crema `#FAEBD7` | 5.35:1 | Estado de advertencia genérico |
+| Peligro `#A8432B` sobre crema `#FAEBD7` | 5.12:1 | Error o estado destructivo genérico |
+| Información `#557259` sobre crema `#FAEBD7` | 4.55:1 | Estado informativo genérico |
+
+La fuente usaba `#C1592F`, `#5B7A45` y `#7C9A7E` en combinaciones que no alcanzaban
+4.5:1 para texto normal sobre crema. Gutenberg usa variantes oscurecidas para corregir
+ese defecto de accesibilidad, según el criterio aprobado para la migración. Los slugs
+son genéricos: el theme no conoce reservas, pedidos ni pagos.
 
 El foco de enlaces y botones usa un anillo doble tinta-crema. La banda de tinta es
 perceptible sobre fondos claros y la banda crema sobre fondos oscuros, sin depender de
@@ -58,3 +81,16 @@ WordPress guarda en base de datos la variación elegida y las personalizaciones
 posteriores. Cambiar el archivo no sobrescribe una selección ya personalizada. Para
 probar una revisión se usa un sitio limpio o se restablecen los estilos globales solo
 con autorización explícita.
+
+## Verificación
+
+`bash tests/run.sh` valida de forma determinista el contrato declarativo, los hashes de
+fuentes y el contraste. La prueba contra WordPress debe además combinar `theme.json`
+con `styles/bonasera.json` mediante `WP_Theme_JSON` y comprobar que el CSS resultante
+incluye las dos familias, la paleta, presets, custom properties y reglas globales. La
+revisión visual se hace tanto en frontend como en el Editor del sitio. La selección
+persistida y su idempotencia pertenecen a DEMO-REST-02B.
+
+La comprobación de integración es de solo lectura y se ejecuta dentro de un WordPress
+real con `wp eval-file tests/validate-wordpress-theme-json.php`. No selecciona la
+variación, no guarda Global Styles y no modifica contenido.
