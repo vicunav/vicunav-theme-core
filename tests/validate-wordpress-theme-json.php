@@ -45,7 +45,7 @@ foreach ( $expected_fragments as $fragment ) {
 			sprintf(
 				/* translators: %s: fragmento CSS esperado. */
 				'El CSS compilado no contiene: %s',
-				$fragment
+				esc_html( $fragment )
 			)
 		);
 	}
