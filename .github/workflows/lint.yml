@@ -22,6 +22,10 @@ jobs:
           tools: composer:v2
           coverage: none
 
+      - name: Validar contratos declarativos
+        shell: bash
+        run: bash tests/run.sh
+
       - name: Instalar PHP_CodeSniffer y WordPress Coding Standards
         shell: bash
         run: |

@@ -1,5 +1,5 @@
 {
-	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"$schema": "https://schemas.wp.org/wp/6.6/theme.json",
 	"version": 3,
 	"settings": {
 		"color": {
@@ -18,6 +18,26 @@
 					"color": "#0369A1",
 					"name": "Acento Vicunav",
 					"slug": "vicunav-accent"
+				},
+				{
+					"color": "#166534",
+					"name": "Positivo Vicunav",
+					"slug": "vicunav-positive"
+				},
+				{
+					"color": "#9A3412",
+					"name": "Advertencia Vicunav",
+					"slug": "vicunav-warning"
+				},
+				{
+					"color": "#991B1B",
+					"name": "Peligro Vicunav",
+					"slug": "vicunav-danger"
+				},
+				{
+					"color": "#0369A1",
+					"name": "Información Vicunav",
+					"slug": "vicunav-info"
 				},
 				{
 					"color": "#F8FAFC",

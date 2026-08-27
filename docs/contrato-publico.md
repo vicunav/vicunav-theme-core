@@ -33,6 +33,10 @@ WordPress 6.6 permanezca soportado.
 | `vicunav-primary` |
 | `vicunav-secondary` |
 | `vicunav-accent` |
+| `vicunav-positive` |
+| `vicunav-warning` |
+| `vicunav-danger` |
+| `vicunav-info` |
 | `vicunav-neutral-100` a `vicunav-neutral-900` |
 
 Los slugs son parte del contrato. Los valores hexadecimales actuales son placeholders
@@ -64,8 +68,15 @@ Bonasera añade estos tokens exclusivos de la variación:
 - espaciado: `bonasera-space-1`, `bonasera-space-3`, `bonasera-space-8`,
   `bonasera-space-9` y `bonasera-space-10`;
 - tamaños: `bonasera-xs`, `bonasera-base`, `bonasera-xl` y `bonasera-xxl`;
-- propiedades personalizadas bajo `--wp--custom--bonasera` para radios, sombras y
-  espaciado fluido de secciones.
+- sombras seleccionables: `bonasera-card`, `bonasera-card-hover`, `bonasera-modal`,
+  `bonasera-drawer` y `bonasera-toast`;
+- propiedades personalizadas bajo `--wp--custom--bonasera` para bordes, breakpoints,
+  contenedor, movimiento, opacidades, radios, sombras, superficies, texto y espaciado
+  fluido de secciones.
+
+Los cuatro colores semánticos son contratos visuales genéricos. El theme no decide qué
+estado de negocio corresponde a cada color. Plugins y verticales conservan semántica,
+texto y autorización; pueden consumir estos presets con fallbacks neutrales.
 
 Las familias `vicunav-heading` y `vicunav-body` se resuelven respectivamente a Big
 Shoulders Display y Jost cuando la variación está activa. Ambas se sirven desde el
@@ -73,6 +84,10 @@ theme bajo SIL Open Font License 1.1, sin dependencia remota de runtime.
 
 La fuente auditada, las mediciones de contraste y la persistencia de la selección se
 documentan en [`variacion-bonasera.md`](variacion-bonasera.md).
+
+El contrato declarativo se valida mediante `bash tests/run.sh`. La suite comprueba
+schemas, slugs, valores, fuentes locales, hashes, contraste, referencias normalizadas y
+que la identidad predeterminada del theme continúe neutral.
 
 ## Templates y partes
 
