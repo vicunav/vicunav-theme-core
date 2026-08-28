@@ -48,6 +48,15 @@ if (cardEntries.length !== 4) {
 	fail('linked-cards-grid debe publicar cuatro destinos editoriales iniciales.');
 }
 
+const pageHero = readFileSync(resolve(repoDir, 'patterns/page-hero-banner.php'), 'utf8');
+if (
+	!pageHero.includes('"dimRatio":70') ||
+	!pageHero.includes('has-background-dim-70') ||
+	pageHero.includes('has-background-dim-65')
+) {
+	fail('page-hero-banner debe conservar el dimRatio que valida core/cover en el Site Editor.');
+}
+
 const css = readFileSync(resolve(repoDir, 'assets/css/restaurant-patterns.css'), 'utf8');
 for (const fragment of [
 	'min-height: 44px',
