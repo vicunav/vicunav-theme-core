@@ -30,6 +30,7 @@ $pattern_files = array(
  *
  * @param array[] $blocks Bloques analizados por WordPress.
  * @return int Cantidad de bloques válidos.
+ * @throws RuntimeException Si encuentra un bloque fuera del contrato.
  */
 function vicunav_validate_restaurant_blocks( array $blocks ): int {
 	$count = 0;
@@ -39,7 +40,7 @@ function vicunav_validate_restaurant_blocks( array $blocks ): int {
 
 		if ( null !== $block_name ) {
 			if ( 'core/html' === $block_name || ! str_starts_with( $block_name, 'core/' ) ) {
-				throw new RuntimeException( sprintf( 'Bloque no permitido: %s.', $block_name ) );
+				throw new RuntimeException( sprintf( 'Bloque no permitido: %s.', esc_html( $block_name ) ) );
 			}
 
 			++$count;
@@ -57,7 +58,7 @@ foreach ( $pattern_files as $pattern_file ) {
 	$pattern_path = get_theme_file_path( 'patterns/' . $pattern_file );
 
 	if ( ! is_readable( $pattern_path ) ) {
-		throw new RuntimeException( sprintf( 'No se puede leer el pattern %s.', $pattern_file ) );
+		throw new RuntimeException( sprintf( 'No se puede leer el pattern %s.', esc_html( $pattern_file ) ) );
 	}
 
 	ob_start();
@@ -67,7 +68,7 @@ foreach ( $pattern_files as $pattern_file ) {
 	$count  = vicunav_validate_restaurant_blocks( $blocks );
 
 	if ( 0 === $count ) {
-		throw new RuntimeException( sprintf( '%s no produjo bloques analizables.', $pattern_file ) );
+		throw new RuntimeException( sprintf( '%s no produjo bloques analizables.', esc_html( $pattern_file ) ) );
 	}
 }
 
