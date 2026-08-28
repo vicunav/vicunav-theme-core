@@ -10,6 +10,15 @@
   z-index: 30;
 }
 
+.vicunav-restaurant-header--home {
+  min-height: 5.125rem;
+}
+
+.vicunav-restaurant-header--inner {
+  min-height: 4rem;
+  padding-block: 0.625rem !important;
+}
+
 .vicunav-restaurant-header__inner,
 .vicunav-restaurant-footer__inner,
 .vicunav-restaurant-footer__minimal-inner {
@@ -21,6 +30,29 @@
 .vicunav-restaurant-header__brand {
   flex: 0 1 auto;
   min-width: 0;
+}
+
+.vicunav-restaurant-header__brand-copy {
+  align-items: flex-start;
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  min-height: 44px;
+  min-width: 0;
+}
+
+.vicunav-restaurant-header__brand-copy .wp-block-site-title a {
+  min-height: 0 !important;
+}
+
+.vicunav-restaurant-header__brand-copy .wp-block-site-tagline {
+  line-height: 1.15;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .vicunav-restaurant-header__brand .wp-block-site-logo,
@@ -65,6 +97,12 @@
   column-gap: clamp(0.75rem, 2vw, 1.75rem);
 }
 
+.vicunav-restaurant-header__navigation .wp-block-navigation-item__content,
+.vicunav-restaurant-footer__navigation .wp-block-navigation-item__content {
+  justify-content: center;
+  min-width: 44px;
+}
+
 .vicunav-restaurant-header .vicunav-restaurant-header__cta {
   display: none;
   flex: 0 0 auto;
@@ -106,6 +144,49 @@
 
 .vicunav-restaurant-footer__legal > * {
   margin-block: 0;
+}
+
+.vicunav-restaurant-footer--full {
+  padding-block: var(--wp--preset--spacing--vicunav-space-xl, 3rem)
+    var(--wp--preset--spacing--vicunav-space-lg, 2rem);
+  padding-inline: var(
+    --wp--custom--bonasera--section-spacing--inline,
+    var(--wp--preset--spacing--vicunav-space-md, 1.5rem)
+  );
+}
+
+.vicunav-restaurant-footer--full .vicunav-restaurant-footer__inner > * + * {
+  margin-block-start: var(--wp--preset--spacing--vicunav-space-lg, 2rem);
+}
+
+.vicunav-restaurant-footer__columns {
+  align-items: center;
+  display: grid;
+  gap: var(--wp--preset--spacing--vicunav-space-xl, 3rem);
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.vicunav-restaurant-footer__media {
+  min-height: 12.5rem;
+}
+
+.vicunav-restaurant-footer__info {
+  margin: 0;
+  min-width: 0;
+}
+
+.vicunav-restaurant-footer__social .wp-social-link a {
+  justify-content: center;
+  min-width: 44px;
+}
+
+.vicunav-restaurant-footer__legal {
+  border-top: 1px solid
+    var(
+      --wp--custom--bonasera--border--hairline-inverse,
+      var(--wp--preset--color--vicunav-neutral-700)
+    );
+  padding-block-start: var(--wp--preset--spacing--vicunav-space-md, 1.5rem);
 }
 
 @media (max-width: 63.99rem) {
@@ -154,6 +235,10 @@
   .vicunav-restaurant-header .vicunav-restaurant-header__cta {
     display: flex;
   }
+
+  .vicunav-restaurant-footer__columns {
+    grid-template-columns: minmax(16.25rem, 1fr) minmax(0, 1fr);
+  }
 }
 
 @media (min-width: 64rem) {
@@ -198,6 +283,10 @@
   }
 
   .vicunav-restaurant-header__brand .wp-block-site-logo {
+    display: none;
+  }
+
+  .vicunav-restaurant-header__brand-copy .wp-block-site-tagline {
     display: none;
   }
 }
