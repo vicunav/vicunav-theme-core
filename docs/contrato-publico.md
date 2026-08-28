@@ -111,7 +111,7 @@ Partes disponibles:
 - `footer-restaurant-minimal`
 
 Los cuatro parts de restaurante son variantes visuales y editables. Sus enlaces son
-valores iniciales, no rutas contractuales del vertical. No leen estado de carrito,
+anclas iniciales, no rutas contractuales del vertical. No leen estado de carrito,
 pedidos, pagos, reservas ni disponibilidad. Sus estilos están scoped y se documentan
 en [`chrome-restaurante.md`](chrome-restaurante.md).
 
@@ -127,8 +127,10 @@ Todos pertenecen a la categoría `vicunav-theme-core`:
 | --- | --- |
 | `vicunav-theme-core/hero-centered` | Ninguna |
 | `vicunav-theme-core/hero-split-image` | Ninguna |
+| `vicunav-theme-core/page-hero-banner` | Ninguna |
 | `vicunav-theme-core/cta-simple` | Ninguna |
 | `vicunav-theme-core/editorial-story` | Ninguna |
+| `vicunav-theme-core/editorial-location` | Ninguna |
 | `vicunav-theme-core/linked-cards-grid` | Ninguna |
 | `vicunav-theme-core/testimonials-grid` | CPT `vicu_testimonial` |
 | `vicunav-theme-core/faq-accordion` | CPT `vicu_faq` |
@@ -136,6 +138,17 @@ Todos pertenecen a la categoría `vicunav-theme-core`:
 
 Los patrones que dependen de contenido muestran un estado vacío o valores editables
 cuando el plugin correspondiente no está activo.
+
+El hero fotográfico, el banner interior, la historia y la ubicación entregan espacios
+de media editables sin URL predeterminada. `editorial-location` es informativo y no
+implementa mapas, tarifas ni disponibilidad. `linked-cards-grid` aporta cuatro
+destinos iniciales mediante anclas editables, no categorías ni rutas del vertical.
+
+`assets/css/restaurant-patterns.css` solo actúa bajo clases `vicunav-pattern-*`,
+`vicunav-linked-*`, `vicunav-editorial-*`, `vicunav-testimonials-*`,
+`vicunav-faq-*` y `vicunav-contact-*`. Define composición, foco, targets de 44 px,
+responsive y movimiento reducido; los valores visuales efectivos proceden de presets
+públicos y conservan fallbacks neutrales.
 
 La matriz que compara las superficies editoriales del restaurante con los patterns
 existentes se documenta en

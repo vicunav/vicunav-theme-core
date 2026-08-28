@@ -18,14 +18,15 @@ Version `0.1.0` contains the complete foundation planned for the first theme mil
 - Full and minimal footers.
 - Restaurant home/inner headers and full/minimal footers with responsive, accessible
   core Navigation behavior.
-- Centered and split-image heroes, a simple CTA, testimonials, FAQ accordion, and
-  contact-information patterns.
-- Reusable editorial-story and linked-card-grid patterns for content-led verticals.
-- Optional integration with shared settings and content types from the future
-  `vicunav-plugin-core` package.
+- Photographic, split-image, and inner-page heroes plus reusable CTA, testimonials,
+  FAQ, contact, location, story, and four-card editorial patterns.
+- Scoped responsive styles for the restaurant chrome and editorial patterns, with
+  core block markup shared between the front end and Site Editor.
+- Optional integration with shared settings and content types from
+  `vicunav-plugin-core`.
 
-All planned issues through #29 are closed. The remaining visual work is to replace the
-placeholder palette with the final Vicunav brand identity when that decision is ready.
+The neutral theme defaults remain independent from the selectable Bonasera variation.
+Ecosystem sequencing and remaining integration work are tracked in `vicunav-hub`.
 
 ## Architectural boundary
 
