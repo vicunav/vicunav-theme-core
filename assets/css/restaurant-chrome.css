@@ -150,7 +150,7 @@
   padding-block: var(--wp--preset--spacing--vicunav-space-xl, 3rem)
     var(--wp--preset--spacing--vicunav-space-lg, 2rem);
   padding-inline: var(
-    --wp--custom--bonasera--section-spacing--inline,
+    --wp--custom--vicunav--section-spacing--inline,
     var(--wp--preset--spacing--vicunav-space-md, 1.5rem)
   );
 }
@@ -183,7 +183,7 @@
 .vicunav-restaurant-footer__legal {
   border-top: 1px solid
     var(
-      --wp--custom--bonasera--border--hairline-inverse,
+      --wp--custom--vicunav--border--hairline-inverse,
       var(--wp--preset--color--vicunav-neutral-700)
     );
   padding-block-start: var(--wp--preset--spacing--vicunav-space-md, 1.5rem);
