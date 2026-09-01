@@ -39,15 +39,15 @@ foreach ( $expected_fragments as $fragment ) {
 	}
 }
 
-$forbidden_terms = array( 'bonasera', 'guasabara', 'guasábara' );
-$lowercased      = strtolower( $stylesheet );
-foreach ( $forbidden_terms as $term ) {
-	if ( false !== strpos( $lowercased, $term ) ) {
+$forbidden_brand_words = array( 'bonasera', 'guasabara', 'guasábara' );
+$lowercased            = strtolower( $stylesheet );
+foreach ( $forbidden_brand_words as $forbidden_brand_word ) {
+	if ( false !== strpos( $lowercased, $forbidden_brand_word ) ) {
 		throw new RuntimeException(
 			sprintf(
 				/* translators: %s: término de marca prohibido. */
 				'El CSS compilado del contrato base menciona una marca concreta: %s',
-				esc_html( $term )
+				esc_html( $forbidden_brand_word )
 			)
 		);
 	}
