@@ -204,6 +204,35 @@
   overflow: hidden;
 }
 
+/*
+ * Tarjeta de plato destacado con insignia de precio circular sobre la foto.
+ * position:relative se aplica aquí (no como atributo style del bloque) porque
+ * el soporte "position" de core/group solo reconoce sticky/fixed; guardar
+ * "relative" como atributo produce un bloque inválido en el editor al
+ * comparar el HTML regenerado contra el guardado.
+ */
+.vicu-home-destacado {
+  position: relative;
+}
+
+.vicu-home-destacado__price {
+  position: absolute;
+  inset-block-start: var(--wp--preset--spacing--vicunav-space-sm, 1rem);
+  inset-inline-end: var(--wp--preset--spacing--vicunav-space-sm, 1rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 3.5625rem;
+  min-height: 3.5625rem;
+  padding: var(--wp--preset--spacing--vicunav-space-xxs, 0.25rem);
+  border-radius: 50%;
+  background: var(--wp--preset--color--vicunav-primary);
+  color: var(--wp--preset--color--vicunav-neutral-100);
+  font-weight: 700;
+  font-size: var(--wp--preset--font-size--vicunav-sm, 0.875rem);
+  text-align: center;
+}
+
 .vicunav-linked-card .wp-block-cover__background {
   background: linear-gradient(
     180deg,
