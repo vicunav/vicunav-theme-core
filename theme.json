@@ -283,5 +283,27 @@
 		"spacing": {
 			"blockGap": "var(--wp--preset--spacing--vicunav-space-md)"
 		}
-	}
+	},
+	"templateParts": [
+		{
+			"name": "header-restaurant-home",
+			"title": "Encabezado de portada",
+			"area": "header"
+		},
+		{
+			"name": "header-restaurant-inner",
+			"title": "Encabezado interior",
+			"area": "header"
+		},
+		{
+			"name": "footer-restaurant-full",
+			"title": "Pie completo",
+			"area": "footer"
+		},
+		{
+			"name": "footer-restaurant-minimal",
+			"title": "Pie mínimo",
+			"area": "footer"
+		}
+	]
 }
