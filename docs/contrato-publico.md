@@ -46,48 +46,65 @@ y pueden cambiar cuando se apruebe la identidad visual definitiva.
 
 | Slug | Valor actual |
 | --- | --- |
+| `vicunav-space-xxs` | `0.25rem` |
 | `vicunav-space-xs` | `0.5rem` |
 | `vicunav-space-sm` | `1rem` |
 | `vicunav-space-md` | `1.5rem` |
 | `vicunav-space-lg` | `2rem` |
 | `vicunav-space-xl` | `3rem` |
+| `vicunav-space-xxl` | `4rem` |
+| `vicunav-space-section-sm` | `6rem` |
+| `vicunav-space-section-md` | `8rem` |
+| `vicunav-space-section-lg` | `12rem` |
+
+Ningún slug de esta escala usa un dígito pegado a una letra (ej. `2xs`). WordPress
+inserta un guion en esa frontera al compilar el nombre de la custom property CSS del
+preset, así que un slug así nunca coincide con el nombre real generado. Ver
+[`child-themes.md`](child-themes.md).
 
 ### Tipografía
 
 - Familias: `vicunav-heading` y `vicunav-body`.
-- Tamaños: `vicunav-sm`, `vicunav-md`, `vicunav-lg` y `vicunav-xl`.
+- Tamaños: `vicunav-xxs`, `vicunav-sm`, `vicunav-md`, `vicunav-lg`, `vicunav-xl`,
+  `vicunav-xxl`, `vicunav-display-sm` y `vicunav-display-lg`.
 
-## Variaciones visuales
+### Sombras
 
-El theme publica la variación seleccionable `Bonasera` mediante
-`styles/bonasera.json`. La variación conserva los slugs contractuales y sustituye solo
-sus valores efectivos. No modifica la identidad predeterminada de `theme.json`.
+`vicunav-shadow-card`, `vicunav-shadow-card-hover`, `vicunav-shadow-panel`,
+`vicunav-shadow-modal` y `vicunav-shadow-toast`.
 
-Bonasera añade estos tokens exclusivos de la variación:
+### Layout
 
-- espaciado: `bonasera-space-1`, `bonasera-space-3`, `bonasera-space-8`,
-  `bonasera-space-9` y `bonasera-space-10`;
-- tamaños: `bonasera-xs`, `bonasera-base`, `bonasera-xl` y `bonasera-xxl`;
-- sombras seleccionables: `bonasera-card`, `bonasera-card-hover`, `bonasera-modal`,
-  `bonasera-drawer` y `bonasera-toast`;
-- propiedades personalizadas bajo `--wp--custom--bonasera` para bordes, breakpoints,
-  contenedor, movimiento, opacidades, radios, sombras, superficies, texto y espaciado
-  fluido de secciones.
+`settings.layout.contentSize` y `settings.layout.wideSize` están publicados con
+valores placeholder. Cualquier vertical o child theme puede sustituirlos.
 
-Los cuatro colores semánticos son contratos visuales genéricos. El theme no decide qué
-estado de negocio corresponde a cada color. Plugins y verticales conservan semántica,
-texto y autorización; pueden consumir estos presets con fallbacks neutrales.
+### Propiedades personalizadas
 
-Las familias `vicunav-heading` y `vicunav-body` se resuelven respectivamente a Big
-Shoulders Display y Jost cuando la variación está activa. Ambas se sirven desde el
-theme bajo SIL Open Font License 1.1, sin dependencia remota de runtime.
+`settings.custom.vicunav` publica los grupos `border`, `breakpoint`, `container`,
+`motion`, `opacity`, `radius`, `surface`, `text` y `section`. Son slots agnósticos con
+valores placeholder — su propósito es que cualquier vertical tenga breakpoints,
+duraciones de movimiento, radios, opacidades y padding fluido de sección consistentes
+sin reinventarlos, no imponer una identidad visual.
 
-La fuente auditada, las mediciones de contraste y la persistencia de la selección se
-documentan en [`variacion-bonasera.md`](variacion-bonasera.md).
+## Marca, verticales y child themes
+
+Este theme **no publica ni admite ninguna variación de marca o demo concreto**
+(`styles/*.json` con nombre de cliente, paleta real de un negocio, tipografías de
+marca, etc.). Los slugs de esta página son el contrato; los valores reales de una
+marca de cualquier vertical (restaurante, hotel, estudio de bienestar...) se aplican
+en un **child theme** propiedad del demo o del sitio correspondiente, nunca en este
+repositorio. El criterio
+completo — qué es reutilizable aquí frente a qué va en un child theme, y cómo crear
+uno — está documentado en [`child-themes.md`](child-themes.md).
+
+Los cuatro colores semánticos (`vicunav-positive`, `vicunav-warning`, `vicunav-danger`,
+`vicunav-info`) son contratos visuales genéricos. El theme no decide qué estado de
+negocio corresponde a cada color. Plugins y verticales conservan semántica, texto y
+autorización; pueden consumir estos presets con fallbacks neutrales.
 
 El contrato declarativo se valida mediante `bash tests/run.sh`. La suite comprueba
-schemas, slugs, valores, fuentes locales, hashes, contraste, referencias normalizadas y
-que la identidad predeterminada del theme continúe neutral.
+schema, slugs, conteo de pasos por escala y que ni `theme.json` ni este documento
+mencionen una marca o demo concreto.
 
 ## Templates y partes
 

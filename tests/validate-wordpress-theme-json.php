@@ -1,6 +1,9 @@
 <?php
 /**
- * Valida que WordPress compile el contrato visual Bonasera.
+ * Valida que WordPress compile el contrato base agnóstico de theme.json.
+ *
+ * No valida ninguna marca o demo: eso es responsabilidad del test equivalente en el
+ * child theme correspondiente (ver docs/child-themes.md).
  *
  * Ejecutar con:
  * wp eval-file tests/validate-wordpress-theme-json.php
@@ -12,31 +15,16 @@ if ( ! class_exists( 'WP_Theme_JSON' ) || ! class_exists( 'WP_Theme_JSON_Resolve
 	throw new RuntimeException( 'WordPress no expone las APIs de theme.json requeridas.' );
 }
 
-$variation_path = get_theme_file_path( 'styles/bonasera.json' );
-$variation_data = wp_json_file_decode(
-	$variation_path,
-	array(
-		'associative' => true,
-	)
-);
-
-if ( ! is_array( $variation_data ) ) {
-	throw new RuntimeException( 'WordPress no pudo leer la variación Bonasera.' );
-}
-
 $theme_data = WP_Theme_JSON_Resolver::get_theme_data();
-$theme_data->merge( new WP_Theme_JSON( $variation_data, 'theme' ) );
 $stylesheet = $theme_data->get_stylesheet();
 
 $expected_fragments = array(
-	'Big Shoulders Display',
-	'Jost, sans-serif',
-	'--wp--preset--color--vicunav-primary: #0D0D0D',
-	'--wp--preset--spacing--bonasera-space-10: 8.75rem',
-	'--wp--preset--shadow--bonasera-card',
-	'--wp--custom--bonasera--container--max: 1240px',
-	'transform: scaleY(1.22)',
-	'opacity: 0.72',
+	'--wp--preset--color--vicunav-primary: #1D4ED8',
+	'--wp--preset--spacing--vicunav-space-section-lg: 12rem',
+	'--wp--preset--font-size--vicunav-display-lg',
+	'--wp--preset--shadow--vicunav-shadow-toast',
+	'--wp--custom--vicunav--container--max: 1200px',
+	'--wp--custom--vicunav--breakpoint--wide: 1440px',
 );
 
 foreach ( $expected_fragments as $fragment ) {
@@ -51,4 +39,18 @@ foreach ( $expected_fragments as $fragment ) {
 	}
 }
 
-WP_CLI::success( 'WordPress compiló el contrato visual Bonasera.' );
+$forbidden_terms = array( 'bonasera', 'guasabara', 'guasábara' );
+$lowercased      = strtolower( $stylesheet );
+foreach ( $forbidden_terms as $term ) {
+	if ( false !== strpos( $lowercased, $term ) ) {
+		throw new RuntimeException(
+			sprintf(
+				/* translators: %s: término de marca prohibido. */
+				'El CSS compilado del contrato base menciona una marca concreta: %s',
+				esc_html( $term )
+			)
+		);
+	}
+}
+
+WP_CLI::success( 'WordPress compiló el contrato base agnóstico de theme.json.' );

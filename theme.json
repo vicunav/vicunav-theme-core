@@ -89,6 +89,11 @@
 		"spacing": {
 			"spacingSizes": [
 				{
+					"name": "Espacio XXS",
+					"size": "0.25rem",
+					"slug": "vicunav-space-xxs"
+				},
+				{
 					"name": "Espacio XS",
 					"size": "0.5rem",
 					"slug": "vicunav-space-xs"
@@ -112,6 +117,26 @@
 					"name": "Espacio XL",
 					"size": "3rem",
 					"slug": "vicunav-space-xl"
+				},
+				{
+					"name": "Espacio XXL",
+					"size": "4rem",
+					"slug": "vicunav-space-xxl"
+				},
+				{
+					"name": "Espacio de sección SM",
+					"size": "6rem",
+					"slug": "vicunav-space-section-sm"
+				},
+				{
+					"name": "Espacio de sección MD",
+					"size": "8rem",
+					"slug": "vicunav-space-section-md"
+				},
+				{
+					"name": "Espacio de sección LG",
+					"size": "12rem",
+					"slug": "vicunav-space-section-lg"
 				}
 			]
 		},
@@ -129,6 +154,11 @@
 				}
 			],
 			"fontSizes": [
+				{
+					"name": "XXS Vicunav",
+					"size": "0.75rem",
+					"slug": "vicunav-xxs"
+				},
 				{
 					"name": "Pequeño Vicunav",
 					"size": "0.875rem",
@@ -148,9 +178,110 @@
 					"name": "Extra grande Vicunav",
 					"size": "2.25rem",
 					"slug": "vicunav-xl"
+				},
+				{
+					"name": "XXL Vicunav",
+					"size": "3rem",
+					"slug": "vicunav-xxl"
+				},
+				{
+					"name": "Display SM Vicunav",
+					"size": "4rem",
+					"slug": "vicunav-display-sm"
+				},
+				{
+					"name": "Display LG Vicunav",
+					"size": "5rem",
+					"slug": "vicunav-display-lg"
 				}
 			]
+		},
+		"shadow": {
+			"presets": [
+				{
+					"name": "Tarjeta Vicunav",
+					"shadow": "0 1px 3px rgba(15, 23, 42, 0.12)",
+					"slug": "vicunav-shadow-card"
+				},
+				{
+					"name": "Tarjeta elevada Vicunav",
+					"shadow": "0 4px 10px rgba(15, 23, 42, 0.16)",
+					"slug": "vicunav-shadow-card-hover"
+				},
+				{
+					"name": "Panel Vicunav",
+					"shadow": "0 8px 24px rgba(15, 23, 42, 0.18)",
+					"slug": "vicunav-shadow-panel"
+				},
+				{
+					"name": "Modal Vicunav",
+					"shadow": "0 16px 40px rgba(15, 23, 42, 0.22)",
+					"slug": "vicunav-shadow-modal"
+				},
+				{
+					"name": "Aviso Vicunav",
+					"shadow": "0 6px 16px rgba(15, 23, 42, 0.20)",
+					"slug": "vicunav-shadow-toast"
+				}
+			]
+		},
+		"layout": {
+			"contentSize": "40rem",
+			"wideSize": "80rem"
+		},
+		"custom": {
+			"vicunav": {
+				"border": {
+					"width": {
+						"thin": "1px",
+						"regular": "2px"
+					}
+				},
+				"breakpoint": {
+					"small": "480px",
+					"medium": "768px",
+					"large": "1024px",
+					"wide": "1440px"
+				},
+				"container": {
+					"max": "1200px"
+				},
+				"motion": {
+					"duration": {
+						"fast": "120ms",
+						"base": "200ms",
+						"slow": "320ms"
+					}
+				},
+				"opacity": {
+					"subtle": "0.08",
+					"muted": "0.5",
+					"strong": "0.75"
+				},
+				"radius": {
+					"none": "0px",
+					"sm": "4px",
+					"md": "8px",
+					"lg": "16px",
+					"pill": "999px"
+				},
+				"surface": {
+					"overlayLight": "rgba(255, 255, 255, 0.6)",
+					"overlayDark": "rgba(15, 23, 42, 0.6)"
+				},
+				"text": {
+					"mutedOpacity": "0.62"
+				},
+				"section": {
+					"paddingBlock": "clamp(2rem, 6vw, 5rem)",
+					"paddingInline": "clamp(1rem, 4vw, 3rem)"
+				}
+			}
 		}
 	},
-	"styles": {}
+	"styles": {
+		"spacing": {
+			"blockGap": "var(--wp--preset--spacing--vicunav-space-md)"
+		}
+	}
 }

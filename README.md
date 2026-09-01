@@ -9,9 +9,11 @@ owning business logic.
 Version `0.1.0` contains the complete foundation planned for the first theme milestone:
 
 - WordPress 6.6 and PHP 8.1 minimum compatibility.
-- Public color, spacing, typography, and font-size tokens in `theme.json`.
-- A selectable Bonasera style variation with self-hosted OFL fonts and WCAG AA
-  contrast evidence, without replacing the global defaults.
+- Public color, spacing, typography, shadow, layout, and custom-property tokens in
+  `theme.json`, all vertical- and brand-agnostic (placeholder values, generic slugs).
+- No brand- or demo-specific style variation ships from this repository. A demo or
+  vertical applies its real identity through its own child theme — see
+  [`docs/child-themes.md`](docs/child-themes.md).
 - General templates for front page, pages, single content, archives, and fallback
   rendering.
 - Default and contact-first headers.
@@ -25,7 +27,6 @@ Version `0.1.0` contains the complete foundation planned for the first theme mil
 - Optional integration with shared settings and content types from
   `vicunav-plugin-core`.
 
-The neutral theme defaults remain independent from the selectable Bonasera variation.
 Ecosystem sequencing and remaining integration work are tracked in `vicunav-hub`.
 
 ## Architectural boundary
