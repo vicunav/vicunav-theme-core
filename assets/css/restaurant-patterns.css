@@ -33,7 +33,22 @@
   );
 }
 
-.vicunav-pattern-section > * {
+/*
+ * Selector de clase duplicada a propósito: sube la especificidad a (0,2,0)
+ * para ganar de forma determinista contra la regla que WordPress inyecta en
+ * un <style> inline por cada bloque con layout.type "constrained"
+ * (`.is-layout-constrained > :where(...)`, especificidad (0,1,0) porque
+ * :where() no suma nada). Con especificidad empatada, gana quien aparezca
+ * después en el documento — y ese <style> inline de WordPress vive en el
+ * body, después de esta hoja enlazada en el head, así que sin este empate
+ * roto la regla de WordPress ganaba silenciosamente: el contenido de cada
+ * sección (incluido el constructor de pizzas) quedaba angosto en
+ * --wp--style--global--content-size (672px) en vez del ancho real del
+ * diseño (1240px), aunque el fondo de la sección sí se veía a ancho
+ * completo. Confirmado inspeccionando document.styleSheets en el navegador,
+ * no adivinado.
+ */
+.vicunav-pattern-section.vicunav-pattern-section > * {
   box-sizing: border-box;
   margin-inline: auto;
   max-width: var(--wp--custom--vicunav--container--max, 77.5rem);
@@ -412,7 +427,11 @@
   );
 }
 
-.vicunav-pattern-cta > * {
+/* Especificidad (0,2,0) a propósito: ver la nota en .vicunav-pattern-section
+   más arriba sobre el empate con la regla inline de WordPress. Aquí ambos
+   valores coinciden hoy (42rem), pero sin este fix el ancho real dependería
+   silenciosamente de --wp--style--global--content-size, no de este valor. */
+.vicunav-pattern-cta.vicunav-pattern-cta > * {
   margin-inline: auto;
   max-width: 42rem;
 }
