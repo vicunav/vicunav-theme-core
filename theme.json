@@ -286,6 +286,16 @@
 	},
 	"templateParts": [
 		{
+			"name": "header-default",
+			"title": "Encabezado genérico",
+			"area": "header"
+		},
+		{
+			"name": "header-contact-first",
+			"title": "Encabezado con contacto",
+			"area": "header"
+		},
+		{
 			"name": "header-restaurant-home",
 			"title": "Encabezado de portada",
 			"area": "header"
@@ -294,6 +304,16 @@
 			"name": "header-restaurant-inner",
 			"title": "Encabezado interior",
 			"area": "header"
+		},
+		{
+			"name": "footer-full",
+			"title": "Pie genérico completo",
+			"area": "footer"
+		},
+		{
+			"name": "footer-minimal",
+			"title": "Pie genérico mínimo",
+			"area": "footer"
 		},
 		{
 			"name": "footer-restaurant-full",
