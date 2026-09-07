@@ -8,8 +8,14 @@ permissions:
 
 jobs:
   estandares-php:
-    name: Estándares de código PHP
+    name: Estándares de código PHP (PHP ${{ matrix.php-version }})
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        php-version:
+          - "8.1"
+          - "8.4"
 
     steps:
       - name: Descargar el repositorio
@@ -18,7 +24,7 @@ jobs:
       - name: Configurar PHP y Composer
         uses: shivammathur/setup-php@v2
         with:
-          php-version: "8.4"
+          php-version: ${{ matrix.php-version }}
           tools: composer:v2
           coverage: none
 

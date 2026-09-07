@@ -9,6 +9,8 @@
  * @package Vicunav_Theme_Core
  */
 
+defined( 'ABSPATH' ) || exit;
+
 ?>
 
 <!-- wp:group {"tagName":"section","metadata":{"name":"Ubicación editorial con media"},"align":"full","className":"vicunav-pattern-section vicunav-editorial-location","backgroundColor":"vicunav-neutral-200","textColor":"vicunav-neutral-900","layout":{"type":"constrained"}} -->

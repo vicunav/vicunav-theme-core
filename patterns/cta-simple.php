@@ -9,6 +9,8 @@
  * @package Vicunav_Theme_Core
  */
 
+defined( 'ABSPATH' ) || exit;
+
 ?>
 
 <!-- wp:group {"tagName":"section","metadata":{"name":"CTA simple"},"align":"full","className":"vicunav-pattern-cta","backgroundColor":"vicunav-primary","textColor":"vicunav-neutral-100","style":{"spacing":{"blockGap":"var:preset|spacing|vicunav-space-md"}},"layout":{"type":"constrained"}} -->

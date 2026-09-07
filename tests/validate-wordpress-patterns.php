@@ -8,6 +8,8 @@
  * @package Vicunav_Theme_Core
  */
 
+defined( 'ABSPATH' ) || exit;
+
 if ( ! function_exists( 'parse_blocks' ) ) {
 	throw new RuntimeException( 'WordPress no expone el parser de bloques requerido.' );
 }
