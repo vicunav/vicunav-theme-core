@@ -9,6 +9,8 @@
  * @package Vicunav_Theme_Core
  */
 
+defined( 'ABSPATH' ) || exit;
+
 ?>
 
 <!-- wp:group {"tagName":"section","metadata":{"name":"Preguntas frecuentes en acordeón"},"align":"full","className":"vicunav-pattern-section vicunav-faq-accordion","backgroundColor":"vicunav-neutral-200","textColor":"vicunav-neutral-900","layout":{"type":"constrained"}} -->

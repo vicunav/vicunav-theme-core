@@ -9,6 +9,8 @@
  * @package Vicunav_Theme_Core
  */
 
+defined( 'ABSPATH' ) || exit;
+
 ?>
 
 <!-- wp:group {"tagName":"section","metadata":{"name":"Testimonios en cuadrícula"},"align":"full","className":"vicunav-pattern-section vicunav-testimonials-grid","backgroundColor":"vicunav-neutral-100","textColor":"vicunav-neutral-900","layout":{"type":"constrained"}} -->

@@ -9,6 +9,8 @@
  * @package Vicunav_Theme_Core
  */
 
+defined( 'ABSPATH' ) || exit;
+
 ?>
 
 <!-- wp:cover {"dimRatio":70,"overlayColor":"vicunav-neutral-900","minHeight":580,"minHeightUnit":"px","isUserOverlayColor":true,"contentPosition":"bottom left","align":"full","className":"vicunav-pattern-hero","layout":{"type":"constrained"}} -->

@@ -9,6 +9,8 @@
  * @package Vicunav_Theme_Core
  */
 
+defined( 'ABSPATH' ) || exit;
+
 $vicunav_contact_values = array(
 	'phone'          => 'Agrega aquí el teléfono del negocio',
 	'address'        => 'Agrega aquí la dirección del negocio',

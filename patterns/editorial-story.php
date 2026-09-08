@@ -9,6 +9,8 @@
  * @package Vicunav_Theme_Core
  */
 
+defined( 'ABSPATH' ) || exit;
+
 ?>
 
 <!-- wp:group {"tagName":"section","metadata":{"name":"Historia editorial con media"},"align":"full","className":"vicunav-pattern-section vicunav-editorial-story","backgroundColor":"vicunav-neutral-100","textColor":"vicunav-neutral-900","layout":{"type":"constrained"}} -->

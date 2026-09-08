@@ -11,6 +11,8 @@
  * @package Vicunav_Theme_Core
  */
 
+defined( 'ABSPATH' ) || exit;
+
 if ( ! class_exists( 'WP_Theme_JSON' ) || ! class_exists( 'WP_Theme_JSON_Resolver' ) ) {
 	throw new RuntimeException( 'WordPress no expone las APIs de theme.json requeridas.' );
 }
