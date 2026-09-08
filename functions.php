@@ -55,53 +55,15 @@ function vicunav_theme_core_preserve_vertical_query_post_type( $query, $block ) 
 add_filter( 'query_loop_block_query_vars', 'vicunav_theme_core_preserve_vertical_query_post_type', 10, 2 );
 
 /**
- * Encola el estilo base del theme (hoy solo el enlace "Saltar al contenido").
- *
- * Va en `wp_enqueue_scripts`, no en `wp_body_open()`: los estilos encolados
- * después de que `wp_head()` ya imprimió no se agregan a `wp_footer()` como sí
- * ocurre con los scripts, así que quedarían sin imprimirse nunca.
- *
- * @return void
- */
-function vicunav_theme_core_enqueue_base_style() {
-	wp_enqueue_style(
-		'vicunav-theme-core-base',
-		get_theme_file_uri( 'assets/css/base.css' ),
-		array(),
-		wp_get_theme()->get( 'Version' )
-	);
-}
-add_action( 'wp_enqueue_scripts', 'vicunav_theme_core_enqueue_base_style' );
-
-/**
- * Imprime el enlace "Saltar al contenido" al inicio de <body>.
- *
- * Se enlaza a `wp_body_open()` en vez de a cada header porque es el único
- * punto por el que pasan las cinco plantillas del theme, y debe ser el
- * primer elemento enfocable de la página. Va incondicional en toda plantilla
- * porque el ancla `#main-content` existe en las cinco.
- *
- * @return void
- */
-function vicunav_theme_core_print_skip_link() {
-	printf(
-		'<a class="vicunav-skip-link" href="#main-content">%s</a>',
-		esc_html__( 'Saltar al contenido', 'vicunav-theme-core' )
-	);
-}
-add_action( 'wp_body_open', 'vicunav_theme_core_print_skip_link' );
-
-/**
  * Carga el comportamiento progresivo del acordeón de preguntas frecuentes.
  *
- * Solo se encola si el contenido de la entrada actual contiene el patrón
- * `faq-accordion` (identificado por su clase estable), en vez de en toda
- * página del sitio.
+ * Solo se encola si el contenido de la entrada actual usa el pattern
+ * `faq-accordion`, en vez de en toda página del sitio.
  *
  * @return void
  */
 function vicunav_theme_core_enqueue_scripts() {
-	if ( ! vicunav_theme_core_singular_content_contains( 'vicunav-faq-accordion__item' ) ) {
+	if ( ! vicunav_theme_core_singular_uses_faq_accordion() ) {
 		return;
 	}
 
@@ -116,19 +78,72 @@ function vicunav_theme_core_enqueue_scripts() {
 add_action( 'wp_enqueue_scripts', 'vicunav_theme_core_enqueue_scripts' );
 
 /**
- * Comprueba si el contenido de la entrada actual contiene una marca dada.
+ * Comprueba si el contenido de la entrada actual usa el pattern faq-accordion.
  *
- * @param string $needle Fragmento estable a buscar (clase CSS, por ejemplo).
  * @return bool
  */
-function vicunav_theme_core_singular_content_contains( string $needle ): bool {
+function vicunav_theme_core_singular_uses_faq_accordion(): bool {
+	return vicunav_theme_core_singular_content_has_block(
+		static function ( array $block ): bool {
+			if ( 'core/pattern' === ( $block['blockName'] ?? null ) ) {
+				return 'vicunav-theme-core/faq-accordion' === ( $block['attrs']['slug'] ?? '' );
+			}
+
+			return str_contains( (string) ( $block['attrs']['className'] ?? '' ), 'vicunav-faq-accordion__item' );
+		}
+	);
+}
+
+/**
+ * Comprueba si algún bloque del contenido de la entrada actual cumple una condición.
+ *
+ * Un pattern insertado por referencia (`<!-- wp:pattern {"slug":"..."} /-->`)
+ * no copia su contenido en `post_content`: solo lo expande al renderizar. Por
+ * eso no basta con buscar texto en `post_content`; hay que reconocer también
+ * la referencia al pattern por su slug además de la clase CSS que tendría si
+ * el contenido llegó a copiarse (por ejemplo, al desvincular el pattern en el
+ * Editor).
+ *
+ * @param callable(array<string, mixed>): bool $matcher Evalúa un bloque parseado.
+ * @return bool
+ */
+function vicunav_theme_core_singular_content_has_block( callable $matcher ): bool {
 	if ( ! is_singular() ) {
 		return false;
 	}
 
 	$post = get_post();
 
-	return $post instanceof WP_Post && str_contains( (string) $post->post_content, $needle );
+	if ( ! $post instanceof WP_Post ) {
+		return false;
+	}
+
+	return vicunav_theme_core_blocks_match( parse_blocks( $post->post_content ), $matcher );
+}
+
+/**
+ * Recorre un árbol de bloques parseados buscando una coincidencia.
+ *
+ * @param array<int, array<string, mixed>>      $blocks  Árbol de bloques.
+ * @param callable(array<string, mixed>): bool $matcher Evalúa un bloque parseado.
+ * @return bool
+ */
+function vicunav_theme_core_blocks_match( array $blocks, callable $matcher ): bool {
+	foreach ( $blocks as $block ) {
+		if ( ! is_array( $block ) ) {
+			continue;
+		}
+
+		if ( $matcher( $block ) ) {
+			return true;
+		}
+
+		if ( ! empty( $block['innerBlocks'] ) && vicunav_theme_core_blocks_match( $block['innerBlocks'], $matcher ) ) {
+			return true;
+		}
+	}
+
+	return false;
 }
 
 /**
@@ -207,10 +222,14 @@ function vicunav_theme_core_register_restaurant_pattern_style() {
 /**
  * Comprueba si el contenido de la entrada actual usa algún pattern editorial.
  *
+ * Igual que `vicunav_theme_core_singular_uses_faq_accordion()`, reconoce
+ * tanto la referencia por slug (`wp:pattern`) como la clase CSS que quedaría
+ * si el contenido del pattern se copió directamente en `post_content`.
+ *
  * @return bool
  */
 function vicunav_theme_core_singular_uses_restaurant_patterns(): bool {
-	$markers = array(
+	$class_markers = array(
 		'vicunav-pattern-',
 		'vicunav-linked-',
 		'vicunav-editorial-',
@@ -219,13 +238,26 @@ function vicunav_theme_core_singular_uses_restaurant_patterns(): bool {
 		'vicunav-contact-',
 	);
 
-	foreach ( $markers as $marker ) {
-		if ( vicunav_theme_core_singular_content_contains( $marker ) ) {
-			return true;
-		}
-	}
+	return vicunav_theme_core_singular_content_has_block(
+		static function ( array $block ) use ( $class_markers ): bool {
+			if (
+				'core/pattern' === ( $block['blockName'] ?? null ) &&
+				str_starts_with( (string) ( $block['attrs']['slug'] ?? '' ), 'vicunav-theme-core/' )
+			) {
+				return true;
+			}
 
-	return false;
+			$class_name = (string) ( $block['attrs']['className'] ?? '' );
+
+			foreach ( $class_markers as $marker ) {
+				if ( str_contains( $class_name, $marker ) ) {
+					return true;
+				}
+			}
+
+			return false;
+		}
+	);
 }
 
 /**
