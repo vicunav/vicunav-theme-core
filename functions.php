@@ -104,7 +104,8 @@ function vicunav_theme_core_singular_uses_faq_accordion(): bool {
  * el contenido llegó a copiarse (por ejemplo, al desvincular el pattern en el
  * Editor).
  *
- * @param callable(array<string, mixed>): bool $matcher Evalúa un bloque parseado.
+ * @param callable $matcher Evalúa un bloque parseado; recibe el array del
+ *                          bloque y devuelve bool.
  * @return bool
  */
 function vicunav_theme_core_singular_content_has_block( callable $matcher ): bool {
@@ -124,8 +125,9 @@ function vicunav_theme_core_singular_content_has_block( callable $matcher ): boo
 /**
  * Recorre un árbol de bloques parseados buscando una coincidencia.
  *
- * @param array<int, array<string, mixed>>      $blocks  Árbol de bloques.
- * @param callable(array<string, mixed>): bool $matcher Evalúa un bloque parseado.
+ * @param array<int, array<string, mixed>> $blocks  Árbol de bloques.
+ * @param callable                         $matcher Evalúa un bloque parseado; recibe el
+ *                                                  array del bloque y devuelve bool.
  * @return bool
  */
 function vicunav_theme_core_blocks_match( array $blocks, callable $matcher ): bool {
